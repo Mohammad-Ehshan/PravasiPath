@@ -31,8 +31,13 @@ app.use('/api/v1/user',userRouter)
 app.use('/api/v1/application',applicationRouter)
 app.use('/api/v1/job',jobRouter)
 
+app.get("/",(req,res,next)=>(return res.status(200).json({
+  success:true,
+  messages:"HELLO WORLD"
+})))
+
 dbConnection();
 
 app.use(errorMiddleware);
 
-export default app
+export default app;
